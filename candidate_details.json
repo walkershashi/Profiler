@@ -1,0 +1,138 @@
+{
+  "Personal Details": {
+    "Name": "Shashi Kumar Soni",
+    "DOB": "21/04/1999",
+    "Age": "21"
+  },
+  "Educational Qualifications": [
+    {
+      "id": 0,
+      "Institute Name": "IIIT Ranchi",
+      "Degree": "B.Tech",
+      "Duration": "2017 - 2021",
+      "Percentage": "7 CGPA"
+    },
+    {
+      "id": 1,
+      "Institute Name": "B.D. Public School",
+      "Degree": "SSC",
+      "Duration": "2015 - 2017",
+      "Percentage": "92"
+    },
+    {
+      "id": 2,
+      "Institute Name": "Montfort School",
+      "Degree": "HSC",
+      "Duration": "2005 - 2015",
+      "Percentage": "91.2"
+    }
+  ],
+  "Skills": [
+    "C",
+    "C++",
+    "Python",
+    "Data Structure",
+    "Java",
+    "Bash",
+    "ML",
+    "Git"
+  ],
+  "Work Experience": [
+    {
+      "id": 0,
+      "Company Name": "KPMG",
+      "Role": "Data Analytics Virtual Intern",
+      "Duration": "05/2020 - 06/2020"
+    },
+    {
+      "id": 1,
+      "Company Name": "JP Morgan Chase & Co.",
+      "Role": "SWE Virtual Intern",
+      "Duration": "05/2020 - 05/2020"
+    }
+  ],
+  "Personal Projects": [
+    {
+      "id": 0,
+      "Title": "Text Recognition",
+      "Description": "Using CV techniques to recognise text embedded in an image",
+      "Link": "https://github.com/walkershashi/Text-Recognition",
+      "Duration": "06/2020 - "
+    },
+    {
+      "id": 1,
+      "Title": "FourSquare API",
+      "Description": "Leveraging FourSquare APIs to visualize nearby places near the given location on the basis of the search query ",
+      "Link": "https://github.com/walkershashi/FourSquare-API",
+      "Duration": "07/2020 - "
+    },
+    {
+      "id": 2,
+      "Title": "WordCloud",
+      "Description": "Visualising a text file to represent an image consisting of the words in the text file displayed on the basis of the frequency in the text file",
+      "Link": "https://github.com/walkershashi/WordCloud",
+      "Duration": "05/2020 - 06/2020"
+    },
+    {
+      "id": 3,
+      "Title": "TwoFlips",
+      "Description": "Games based on the flipping tiles and displaying a match",
+      "Link": "https://github.com/walkershashi/Two-Flips",
+      "Duration": "05/202 - 06/2020"
+    }
+  ],
+  "Training and Certifications": [
+    {
+      "id": 0,
+      "Title": "Google IT Automation with Python",
+      "CertificationLink": "https://www.coursera.org/account/accomplishments/specialization/certificate/NER5NE4CDUUH",
+      "Duration": "02/2020 - 06/2020"
+    },
+    {
+      "id": 1,
+      "Title": "Machine Learning with Python",
+      "CertificationLink": "https://www.coursera.org/account/accomplishments/certificate/QMR4RKUSFBFF",
+      "Duration": "05/2020 - 06/2020"
+    },
+    {
+      "id": 2,
+      "Title": "Google Cloud Platform Fundamentals: Core Infrastructure",
+      "CertificationLink": "https://www.coursera.org/account/accomplishments/certificate/AB4Q7SVQRE3K",
+      "Duration": "05/2020 - 06/2020"
+    },
+    {
+      "id": 3,
+      "Title": "Data Analysis with Python",
+      "CertificationLink": "https://www.coursera.org/account/accomplishments/verify/ADARAA35RDAN",
+      "Duration": "02/2020 - 03/2020"
+    }
+  ],
+  "Academic Acheivements": [
+    "First prize in Quiz",
+    "Second prize in Group Song ",
+    "Secured good position in Inter-NIT Coding Competition",
+    "5 Star coder at Hackerrank"
+  ],
+  "Volunteer Experience/Position of Responsibility": [
+    {
+      "id": 0,
+      "Role": "Captain, Volley Ball",
+      "Description": "Lead the team to Inter-IIIT Sports meet",
+      "Duration": "11/2019 -"
+    },
+    {
+      "id": 1,
+      "Role": "Teaching staff at Sankalp",
+      "Description": "Helped underprevileged children acheive their dreams",
+      "Duration": "10/2017 - 12/2019"
+    }
+  ],
+  "Hobbies & Interests": [
+    "Playing video games ",
+    "Trekking ",
+    "Cricket",
+    "Football",
+    "Reading  G.K. Books",
+    "Programming"
+  ]
+}
