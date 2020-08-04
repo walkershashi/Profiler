@@ -36,6 +36,18 @@ def build_table(info, table_title):
 
     return table_
 
+def list_table(list_):
+    table_data = []
+    
+    for ind, sk in enumerate(list_):
+        table_data.append([ind, sk])
+    
+    skill_table = Table(
+        data = table_data,
+        hAlign = 'LEFT'
+    )
+
+    return skill_table
 
 def generate_resume(details):
     report = SimpleDocTemplate('Resume.pdf')
@@ -46,19 +58,28 @@ def generate_resume(details):
     report_title = Paragraph('Personal Details', styles['h1'])
     report_subtitle = Paragraph(name, styles['h3'])
     
-    edu_title = Paragraph('Educational Details', styles['h1'])
+    edu_title = Paragraph('<br/>Educational Details<br/>', styles['h1'])
     edu_table = build_table(details, 'Educational Qualifications')
     
-    work_title = Paragraph('Work Experience', styles['h1'])
+    work_title = Paragraph('<br/>Work Experience<br/>', styles['h1'])
     work_table = build_table(details, 'Work Experience')
 
-    project_title = Paragraph('Personal Projects', styles['h1'])
+    skills_title = Paragraph('<br/>Skills', styles['h1'])
+    skills_table = list_table(details['Skills'])
+
+    project_title = Paragraph('<br/>Personal Projects<br/>', styles['h1'])
     project_table = build_table(details, 'Personal Projects')
 
-    training_title = Paragraph('Training and Certifications', styles['h1'])
+    training_title = Paragraph('<br/><br/><br/>Training and Certifications', styles['h1'])
     training_table = build_table(details, 'Training and Certifications')
 
-    volunteer_title = Paragraph('Volunteer Experience/Position of Responsibility', styles['h1'])
+    volunteer_title = Paragraph('<br/>Volunteer Experience/Position of Responsibility', styles['h1'])
     volunteer_table = build_table(details, 'Volunteer Experience/Position of Responsibility')
 
-    report.build([report_title, report_subtitle, edu_title, edu_table, work_title, work_table, project_title, project_table, training_title, training_table, volunteer_title, volunteer_table])
+    acad_title = Paragraph('<br/>Academic Acheivements', styles['h1'])
+    acad_table = list_table(details['Academic Acheivements'])
+
+    hobi_title = Paragraph('<br/>Hobbies & Interests', styles['h1'])
+    hobi_table = list_table(details['Hobbies & Interests'])
+
+    report.build([report_title, report_subtitle, edu_title, edu_table, work_title, work_table, skills_title, skills_table, project_title, project_table, training_title, training_table, volunteer_title, volunteer_table, acad_title, acad_table, hobi_title, hobi_table])
