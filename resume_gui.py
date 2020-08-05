@@ -9,7 +9,7 @@ def displayGui():
         [
             GUI.Text('Name:'), GUI.InputText(), 
             GUI.Text('DOB:'), GUI.InputText(),
-            GUI.Text('Age:'), GUI.InputText() 
+            GUI.Text('Email:'), GUI.InputText() 
         ],
         [GUI.Button('Educational Qualifications')],
         [
@@ -131,8 +131,8 @@ def displayGui():
         if event == GUI.WIN_CLOSED or event == 'Cancel':
             break
 
-        if event == 'Ok':
-            pass
+        if event == 'Ok' and all(len(j) > 0 for j in values.values()):
+            break
         
     window.close()
     return values
@@ -143,7 +143,7 @@ def json_details(candidate_details):
         'Personal Details': {
             'Name': candidate_details[0],
             'DOB': candidate_details[1], 
-            'Age': candidate_details[2]
+            'Email': candidate_details[2]
         },
         'Educational Qualifications': [
             {
