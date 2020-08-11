@@ -6,6 +6,6 @@ Using GUI to take the input from the user and then passing it to the resume gene
 
 ![](GUI1.png)   ![](GUI2.png) 
 
-#### Entering the details in this produces this PDF 
+#### <code>Entering the details in this produces this PDF </code>
 
 ![](resume.png)
