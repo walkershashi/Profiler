@@ -2,27 +2,28 @@ import json
 from reportlab.lib import colors
 from reportlab.graphics.shapes import Drawing
 from reportlab.graphics.charts.piecharts import Pie
-from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Image
+
+styles = getSampleStyleSheet()
 
 def build_table(info, table_title):
     keys = list(info[table_title][0].keys())
     
-    try:
-        keys.remove('id')
-    except:
-        pass
-    
-    table_details = [keys]
+    table_details = []
 
+    for i in keys:
+        if i != 'id' or i != 'Link' or i != 'CertificationLink':
+            table_details.append(i)
+    
     for i in info[table_title]:
         row_i = []
         for val in keys:
-            if val != 'id':
-                if len(i[val]) > 35:
-                    row_i.append(i[val][:15])
-                else:
-                    row_i.append(i[val])
+            if val == 'Link' or val == 'CertificationLink':
+                link = '<link href="{}">{}</link>'.format(i[val], i['Title'])
+                row_i.append(Paragraph(link, ParagraphStyle('body')))
+            else:
+                row_i.append(Paragraph(i[val], styles['BodyText']))
 
         table_details.append(row_i)
     
@@ -52,7 +53,6 @@ def list_table(list_):
 def generate_resume(details):
     report = SimpleDocTemplate('Resume.pdf')
 
-    styles = getSampleStyleSheet()
     
     name, dob, email = details['Personal Details'].values()
     
@@ -87,6 +87,7 @@ def generate_resume(details):
     hobi_table = list_table(details['Hobbies & Interests'])
 
     report.build([detail_title, detail_table, edu_title, edu_table, work_title, work_table, skills_title, skills_table, project_title, project_table, training_title, training_table, volunteer_title, volunteer_table, acad_title, acad_table, hobi_title, hobi_table])
+
 
 with open('candidate_details.json', 'r') as json_file:
     json_data = json.load(json_file)
