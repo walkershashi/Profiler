@@ -14,12 +14,12 @@ def build_table(info, table_title):
         keys.remove('id')
     except:
         pass
+
     table_details = []
 
-    '''for i in keys:
-        if i != 'id' or i != 'Link' or i != 'CertificationLink':
-            table_details.append(i)'''
-    
+    if 'Link' in keys or 'CertificationLink' in keys:
+        pass
+
     table_details.append(keys)
     
     for i in info[table_title]:
