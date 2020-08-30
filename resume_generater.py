@@ -9,12 +9,18 @@ styles = getSampleStyleSheet()
 
 def build_table(info, table_title):
     keys = list(info[table_title][0].keys())
-    
+
+    try:
+        keys.remove('id')
+    except:
+        pass
     table_details = []
 
-    for i in keys:
+    '''for i in keys:
         if i != 'id' or i != 'Link' or i != 'CertificationLink':
-            table_details.append(i)
+            table_details.append(i)'''
+    
+    table_details.append(keys)
     
     for i in info[table_title]:
         row_i = []
@@ -23,7 +29,7 @@ def build_table(info, table_title):
                 link = '<link href="{}">{}</link>'.format(i[val], i['Title'])
                 row_i.append(Paragraph(link, ParagraphStyle('body')))
             else:
-                row_i.append(Paragraph(i[val], styles['BodyText']))
+                row_i.append(Paragraph(str(i[val]), styles['BodyText']))
 
         table_details.append(row_i)
     
@@ -52,7 +58,6 @@ def list_table(list_):
 
 def generate_resume(details):
     report = SimpleDocTemplate('Resume.pdf')
-
     
     name, dob, email = details['Personal Details'].values()
     
