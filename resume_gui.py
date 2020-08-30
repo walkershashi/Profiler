@@ -269,25 +269,25 @@ def json_details(candidate_details1, candidate_details2, candidate_details3):
             {
                 'id': 0,
                 'Title': candidate_details2[22], 
-                'CertificationLink': candidate_details2[23],
+                'Link': candidate_details2[23],
                 'Duration': candidate_details2[24]
             },
             {
                 'id': 1,
                 'Title': candidate_details2[25], 
-                'CertificationLink': candidate_details2[26],
+                'Link': candidate_details2[26],
                 'Duration': candidate_details2[27]
             },
             {
                 'id': 2,
                 'Title': candidate_details2[28], 
-                'CertificationLink': candidate_details2[29],
+                'Link': candidate_details2[29],
                 'Duration': candidate_details2[30]
             },
             {
                 'id': 3,
                 'Title': candidate_details2[31], 
-                'CertificationLink': candidate_details2[32],
+                'Link': candidate_details2[32],
                 'Duration': candidate_details2[33]
             },
         ],

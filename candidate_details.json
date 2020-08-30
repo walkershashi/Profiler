@@ -85,25 +85,25 @@
     {
       "id": 0,
       "Title": "Google IT Automation with Python",
-      "CertificationLink": "https://www.coursera.org/account/accomplishments/specialization/certificate/NER5NE4CDUUH",
+      "Link": "https://www.coursera.org/account/accomplishments/specialization/certificate/NER5NE4CDUUH",
       "Duration": "02/2020 - 06/2020"
     },
     {
       "id": 1,
       "Title": "Machine Learning with Python",
-      "CertificationLink": "https://www.coursera.org/account/accomplishments/certificate/QMR4RKUSFBFF",
+      "Link": "https://www.coursera.org/account/accomplishments/certificate/QMR4RKUSFBFF",
       "Duration": "05/2020 - 06/2020"
     },
     {
       "id": 2,
       "Title": "Google Cloud Platform Fundamentals: Core Infrastructure",
-      "CertificationLink": "https://www.coursera.org/account/accomplishments/certificate/AB4Q7SVQRE3K",
+      "Link": "https://www.coursera.org/account/accomplishments/certificate/AB4Q7SVQRE3K",
       "Duration": "05/2020 - 06/2020"
     },
     {
       "id": 3,
       "Title": "Data Analysis with Python",
-      "CertificationLink": "https://www.coursera.org/account/accomplishments/verify/ADARAA35RDAN",
+      "Link": "https://www.coursera.org/account/accomplishments/verify/ADARAA35RDAN",
       "Duration": "02/2020 - 03/2020"
     }
   ],
