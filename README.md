@@ -4,8 +4,8 @@ Using GUI to take the input from the user and then passing it to the resume gene
 
 ## Visual Representation
 
-![](GUI1.png)   ![](GUI2.png) 
+![](assets/GUI1.png)   ![](assets/GUI2.png) 
 
 #### <code>Entering the details in this produces this PDF </code>
 
-![](resume.png)
+![](assets/resume.png)
