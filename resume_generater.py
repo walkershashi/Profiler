@@ -15,11 +15,12 @@ def build_table(info, table_title, grid = True):
     except:
         pass
 
-    table_details = [keys]
-
+    table_details = []
+    
     if 'Link' in keys:
-        links = []
+        head_keys = []
         row_entry = []
+        links = []
 
         for i in info[table_title]:
             row_j = []
@@ -28,6 +29,9 @@ def build_table(info, table_title, grid = True):
                     link = '<link href="{}">{}</link>'.format(i['Link'], i['Title'])
                     links.append(Paragraph(link, ParagraphStyle('body')))
                 else:
+                    if len(head_keys) < len(keys)-1:
+                        head_keys.append(Paragraph(val , styles['h3']))
+
                     row_j.append(Paragraph(str(i[val])  , styles['BodyText']))
 
             row_entry.append(row_j)
@@ -35,9 +39,17 @@ def build_table(info, table_title, grid = True):
         for i in range(len(row_entry)):
             row_entry[i][0] = links[i]
         
+        row_entry.insert(0, head_keys)
+
         table_details = row_entry
     
-    else:    
+    else:
+        head_keys = []
+        for key in keys:
+            head_keys.append(Paragraph(key , styles['h3']))
+
+        table_details.append(head_keys)
+
         for i in info[table_title]:
             row_i = []
             for val in keys:
