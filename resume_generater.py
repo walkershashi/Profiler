@@ -7,7 +7,7 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Imag
 
 styles = getSampleStyleSheet()
 
-def build_table(info, table_title):
+def build_table(info, table_title, grid = True):
     keys = list(info[table_title][0].keys())
 
     try:
@@ -44,14 +44,19 @@ def build_table(info, table_title):
                 row_i.append(Paragraph(str(i[val]), styles['BodyText']))
 
             table_details.append(row_i)
-
-    table_style = [('GRID', (0, 0), (-1, -1), 1, colors.blueviolet)]
     
-    table_ = Table(
-        data = table_details,
-        style = table_style,
-        hAlign = 'LEFT'
-    )
+    if grid:
+        table_ = Table(
+            data = table_details,
+            style = [('GRID', (0, 0), (-1, -1), 1, colors.blueviolet)],
+            hAlign = 'LEFT'
+        )
+    
+    else:
+        table_ = Table(
+            data = table_details,
+            hAlign = 'LEFT'
+        )
 
     return table_
 
@@ -93,7 +98,7 @@ def generate_resume(details):
     project_table = build_table(details, 'Personal Projects')
 
     training_title = Paragraph('<br/><bullet>&bull;</bullet>Training and Certifications', styles['h1'])
-    training_table = build_table(details, 'Training and Certifications')
+    training_table = build_table(details, 'Training and Certifications', grid=False)
 
     volunteer_title = Paragraph('<bullet>&bull;</bullet>Volunteer Experience/Position of Responsibility', styles['h1'])
     volunteer_table = build_table(details, 'Volunteer Experience/Position of Responsibility')
