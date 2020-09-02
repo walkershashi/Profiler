@@ -92,7 +92,7 @@ def generate_resume(details):
     project_title = Paragraph('<bullet>&bull;</bullet>Personal Projects', styles['h1'])
     project_table = build_table(details, 'Personal Projects')
 
-    training_title = Paragraph('<bullet>&bull;</bullet>Training and Certifications', styles['h1'])
+    training_title = Paragraph('<br/><bullet>&bull;</bullet>Training and Certifications', styles['h1'])
     training_table = build_table(details, 'Training and Certifications')
 
     volunteer_title = Paragraph('<bullet>&bull;</bullet>Volunteer Experience/Position of Responsibility', styles['h1'])
