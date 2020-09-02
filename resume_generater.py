@@ -15,24 +15,36 @@ def build_table(info, table_title):
     except:
         pass
 
-    table_details = []
+    table_details = [keys]
 
-    if 'Link' in keys or 'CertificationLink' in keys:
-        pass
+    if 'Link' in keys:
+        links = []
+        row_entry = []
 
-    table_details.append(keys)
+        for i in info[table_title]:
+            row_j = []
+            for val in keys:
+                if val == 'Link':
+                    link = '<link href="{}">{}</link>'.format(i['Link'], i['Title'])
+                    links.append(Paragraph(link, ParagraphStyle('body')))
+                else:
+                    row_j.append(Paragraph(str(i[val])  , styles['BodyText']))
+
+            row_entry.append(row_j)
+        
+        for i in range(len(row_entry)):
+            row_entry[i][0] = links[i]
+        
+        table_details = row_entry
     
-    for i in info[table_title]:
-        row_i = []
-        for val in keys:
-            if val == 'Link' or val == 'CertificationLink':
-                link = '<link href="{}">{}</link>'.format(i[val], i['Title'])
-                row_i.append(Paragraph(link, ParagraphStyle('body')))
-            else:
+    else:    
+        for i in info[table_title]:
+            row_i = []
+            for val in keys:
                 row_i.append(Paragraph(str(i[val]), styles['BodyText']))
 
-        table_details.append(row_i)
-    
+            table_details.append(row_i)
+
     table_style = [('GRID', (0, 0), (-1, -1), 1, colors.blueviolet)]
     
     table_ = Table(
