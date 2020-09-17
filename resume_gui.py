@@ -3,7 +3,7 @@ import PySimpleGUI as GUI
 
 GUI.theme('Purple')	# Add a touch of color
 
-def basic():
+def student_details():
     # All the stuff inside your window.
 
     layout = [
@@ -39,30 +39,7 @@ def basic():
         [
             GUI.Text(''), GUI.InputText(), GUI.InputText(), GUI.InputText(), GUI.InputText()
         ],
-        [
-            GUI.Button('Ok'), GUI.Button('Cancel')
-        ]
-    ]
-
-    window = GUI.Window('Resumer', layout)
-
-    # Event Loop to process "events" and get the "values" of the inputs
-
-    while True:
-        event, values = window.read()
-
-        if event == GUI.WIN_CLOSED or event == 'Cancel':
-            break
-
-        if event == 'Ok' and all(len(j) > 0 for j in values.values()):
-            break
         
-    window.close()
-    return values
-
-
-def proffesional():
-    layout = [
         [GUI.Button('Work Experience')],
         [
             GUI.Text('Company Name:'), GUI.InputText(),
@@ -120,30 +97,7 @@ def proffesional():
             GUI.Text('Certification Link:'), GUI.InputText(), 
             GUI.Text('Duration:'), GUI.InputText()
         ],
-        [
-            GUI.Button('Ok'), GUI.Button('Cancel')
-        ]
-    ]
-
-    # Create the Window
-    window = GUI.Window('Resumer', layout)
-
-    # Event Loop to process "events" and get the "values" of the inputs
-
-    while True:
-        event, values = window.read()
-
-        if event == GUI.WIN_CLOSED or event == 'Cancel':
-            break
-
-        if event == 'Ok' and all(len(j) > 0 for j in values.values()):
-            break
         
-    window.close()
-    return values
-
-def others():
-    layout = [
         [GUI.Button('Acadamic Acheivements')],
         [
             GUI.Text(''), GUI.InputText(), GUI.InputText(), GUI.InputText(), GUI.InputText() 
@@ -186,128 +140,127 @@ def others():
             break
         
     window.close()
+    print(values)
     return values
 
-
-def json_details(candidate_details1, candidate_details2, candidate_details3):
+def json_details(candidate_details):
 
     candidate_json = {
         'Personal Details': {
-            'Name': candidate_details1[0],
-            'DOB': candidate_details1[1], 
-            'Email': candidate_details1[2]
+            'Name': candidate_details[0],
+            'DOB': candidate_details[1], 
+            'Email': candidate_details[2]
         },
         'Educational Qualifications': [
             {
                 'id': 0,
-                'Institute Name': candidate_details1[3],
-                'Degree': candidate_details1[4],
-                'Duration': candidate_details1[5],
-                'Percentage': candidate_details1[6]
+                'Institute Name': candidate_details[3],
+                'Degree': candidate_details[4],
+                'Duration': candidate_details[5],
+                'Percentage': candidate_details[6]
             },
             {
                 'id': 1,
-                'Institute Name': candidate_details1[7],
-                'Degree': candidate_details1[8],
-                'Duration': candidate_details1[9],
-                'Percentage': candidate_details1[10]
+                'Institute Name': candidate_details[7],
+                'Degree': candidate_details[8],
+                'Duration': candidate_details[9],
+                'Percentage': candidate_details[10]
             },
             {
                 'id': 2,
-                'Institute Name': candidate_details1[11],
-                'Degree': candidate_details1[12],
-                'Duration': candidate_details1[13],
-                'Percentage': candidate_details1[14]
+                'Institute Name': candidate_details[11],
+                'Degree': candidate_details[12],
+                'Duration': candidate_details[13],
+                'Percentage': candidate_details[14]
             },
         ],
-        'Skills': [candidate_details1[i] for i in range(15, 23)],
+        'Skills': [candidate_details[i] for i in range(15, 23)],
         'Work Experience': [
             {
                 'id': 0,
-                'Company Name': candidate_details2[0],
-                'Role': candidate_details2[1],
-                'Duration': candidate_details2[2]
+                'Company Name': candidate_details[23],
+                'Role': candidate_details[24],
+                'Duration': candidate_details[25]
             },
             {
                 'id': 1,
-                'Company Name': candidate_details2[3],
-                'Role': candidate_details2[4],
-                'Duration': candidate_details2[5]
+                'Company Name': candidate_details[26],
+                'Role': candidate_details[27],
+                'Duration': candidate_details[28]
             }
         ],
         'Personal Projects': [
             {
                 'id': 0,
-                'Title': candidate_details2[6], 
-                'Description': candidate_details2[7],
-                'Link': candidate_details2[8],
-                'Duration': candidate_details2[9]
+                'Title': candidate_details[29], 
+                'Description': candidate_details[30],
+                'Link': candidate_details[31],
+                'Duration': candidate_details[32]
             },
             {
                 'id': 1,
-                'Title': candidate_details2[10], 
-                'Description': candidate_details2[11],
-                'Link': candidate_details2[12],
-                'Duration': candidate_details2[13]
+                'Title': candidate_details[33], 
+                'Description': candidate_details[34],
+                'Link': candidate_details[35],
+                'Duration': candidate_details[36]
             },
             {
                 'id': 2,
-                'Title': candidate_details2[14], 
-                'Description': candidate_details2[15],
-                'Link': candidate_details2[16],
-                'Duration': candidate_details2[17]
+                'Title': candidate_details[37], 
+                'Description': candidate_details[38],
+                'Link': candidate_details[39],
+                'Duration': candidate_details[40]
             },
             {
                 'id': 3,
-                'Title': candidate_details2[18], 
-                'Description': candidate_details2[19],
-                'Link': candidate_details2[20],
-                'Duration': candidate_details2[21]
+                'Title': candidate_details[41], 
+                'Description': candidate_details[42],
+                'Link': candidate_details[43],
+                'Duration': candidate_details[44]
             },
         ],
         'Training and Certifications': [
             {
                 'id': 0,
-                'Title': candidate_details2[22], 
-                'Link': candidate_details2[23],
-                'Duration': candidate_details2[24]
+                'Title': candidate_details[45], 
+                'Link': candidate_details[46],
+                'Duration': candidate_details[47]
             },
             {
                 'id': 1,
-                'Title': candidate_details2[25], 
-                'Link': candidate_details2[26],
-                'Duration': candidate_details2[27]
+                'Title': candidate_details[48], 
+                'Link': candidate_details[49],
+                'Duration': candidate_details[50]
             },
             {
                 'id': 2,
-                'Title': candidate_details2[28], 
-                'Link': candidate_details2[29],
-                'Duration': candidate_details2[30]
+                'Title': candidate_details[51], 
+                'Link': candidate_details[52],
+                'Duration': candidate_details[53]
             },
             {
                 'id': 3,
-                'Title': candidate_details2[31], 
-                'Link': candidate_details2[32],
-                'Duration': candidate_details2[33]
+                'Title': candidate_details[54], 
+                'Link': candidate_details[55],
+                'Duration': candidate_details[56]
             },
         ],
-        'Academic Acheivements': [candidate_details3[i] for i in range(4)],
+        'Academic Acheivements': [candidate_details[i] for i in range(57, 61)],
         'Volunteer Experience/Position of Responsibility': [
             {
                 'id': 0,
-                'Role': candidate_details3[4],
-                'Description': candidate_details3[5],
-                'Duration': candidate_details3[6]
+                'Role': candidate_details[61],
+                'Description': candidate_details[62],
+                'Duration': candidate_details[63]
             },
             {
                 'id': 1,
-                'Role': candidate_details3[7],
-                'Description': candidate_details3[8],
-                'Duration': candidate_details3[9]
+                'Role': candidate_details[64],
+                'Description': candidate_details[65],
+                'Duration': candidate_details[66]
             }
         ],
-        'Hobbies & Interests' : [candidate_details3[i] for i in range(10, 16)]
+        'Hobbies & Interests' : [candidate_details[i] for i in range(67, 73)]
     }
     
-
     return candidate_json
