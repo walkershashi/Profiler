@@ -1,12 +1,8 @@
 import resume_gui as rg
 import resume_generater as r_gen
 
-values1 = rg.basic()
+student_info = rg.student_details()
 
-values2 = rg.proffesional()
-
-values3 = rg.others()
-
-candidate_details = rg.json_details(values1, values2, values3)
+candidate_details = rg.json_details(student_info)
 
 r_gen.generate_resume(candidate_details)
