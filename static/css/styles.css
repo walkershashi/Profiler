@@ -1,0 +1,36 @@
+.form-div{
+  border: 5px;
+  margin: 5%;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.info-form{
+  border: 10px;
+  
+}
+
+input[type=text]{
+  border: 2px solid green;
+  border-radius: 10px;
+  width: 20%;
+}
+
+input[type=email]{
+  border: 2px solid green;
+  border-radius: 10px;
+  width: 20%;
+}
+
+.description_area{
+  border: 2px solid green;
+  border-radius: 10px;
+  width: 20%;
+}
+
+input[type=submit]{
+  border: 2px solid green;
+  border-radius: 10px;
+  width: 10%;
+  height: 30px;
+}
