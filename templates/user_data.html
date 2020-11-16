@@ -1,0 +1,185 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+        <!-- 
+            <link rel="stylesheet" href="../static/css/styles.css">
+        -->
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm bg-light bg-dark navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="{{ url_for('static', filename='images/YR_logo.JPG') }}" alt="LOGO" style="width: 70px; height: 50px; border-radius: 20px;">
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">YourResume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CV</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Career</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="form-div">
+            <form action="http://localhost:5000/generate=true" method="POST" class="info-form">
+                <h2>Personal Details</h2>
+                <input type="text" name="fname" placeholder="First Name" required>
+                <input type="text" name="mname" placeholder="Middle Name">
+                <input type="text" name="lname" placeholder="Last Name"> <br><br>
+                <input type="email" name="email" placeholder="Email" required 
+                style="border: 2px solid green;
+                border-radius: 10px;
+                width: 220px;"
+                >
+                <input type="text" name="dob" placeholder="Date of Birth" required>
+
+                <br><br>
+                <h2>Educational Details</h2>
+                <h4>Enter Details of three most recent Education</h4>
+                
+                <label for="education_1">1.</label>
+                <input type="text" name="edu_1_name" placeholder="University/College">
+                <input type="text" name="edu_1_dur" placeholder="Duration">
+                <input type="text" name="edu_1_degree" placeholder="Degree">
+                <input type="text" name="edu_1_percent" placeholder="Percent Scored"> <br><br>
+                
+                <label for="education_2">2.</label>
+                <input type="text" name="edu_2_name" placeholder="University/College">
+                <input type="text" name="edu_2_dur" placeholder="Duration">
+                <input type="text" name="edu_2_degree" placeholder="Degree">
+                <input type="text" name="edu_2_percent" placeholder="Percent Scored"> <br><br>
+
+                <label for="education_3">3.</label>
+                <input type="text" name="edu_3_name" placeholder="University/College">
+                <input type="text" name="edu_3_dur" placeholder="Duration">
+                <input type="text" name="edu_3_degree" placeholder="Degree">
+                <input type="text" name="edu_3_percent" placeholder="Percent Scored"> 
+
+                <br><br>
+                <h2>Work Experience</h2>
+                <h4>Enter details of three most recent experience</h4>
+
+                <label for="work_1">1.</label>
+                <input type="text" name="work_1_cmp" placeholder="Company">
+                <input type="text" name="work_1_role" placeholder="Designation">
+                <input type="text" name="work_1_dur" placeholder="Duration"> <br><br>
+
+                <label for="work_2">1.</label>
+                <input type="text" name="work_2_cmp" placeholder="Company">
+                <input type="text" name="work_2_role" placeholder="Designation">
+                <input type="text" name="work_2_dur" placeholder="Duration"> <br><br>
+
+                <label for="work_3">1.</label>
+                <input type="text" name="work_3_cmp" placeholder="Company">
+                <input type="text" name="work_3_role" placeholder="Designation">
+                <input type="text" name="work_3_dur" placeholder="Duration"> <br><br>
+
+                <h2>Skills</h2>
+                <h4>Enter top five Skills</h4>
+
+                <input type="text" name="skill_1" placeholder="C/C++/Java">
+                <input type="text" name="skill_2" placeholder="R/JS/Python">
+                <input type="text" name="skill_3" placeholder="HTML/CSS/Angular"> <br><br>
+                <input type="text" name="skill_4" placeholder="AI/ML/DS">
+                <input type="text" name="skill_5" placeholder="SQL/Mongo/Postgre">
+                
+                <h2>Personal Projects</h2>
+
+                <label for="project_1">1.</label>
+                <input type="text" name="proj_1_name" placeholder="Title">
+                <input type="text" name="proj_1_dur" placeholder="Duration">
+                <input type="text" name="proj_1_link" placeholder="URL"> <br><br>
+                <textarea class="description_area" name="proj_1_des" cols="30" rows="2" placeholder="Description..."></textarea> <br><br>
+
+                <label for="project_2">2.</label>
+                <input type="text" name="proj_2_name" placeholder="Title">
+                <input type="text" name="proj_2_dur" placeholder="Duration">
+                <input type="text" name="proj_2_link" placeholder="URL"> <br><br>
+                <textarea class="description_area" name="proj_2_des" cols="30" rows="2" placeholder="Description..."></textarea> <br><br>
+
+                <label for="project_3">3.</label>
+                <input type="text" name="proj_3_name" placeholder="Title">
+                <input type="text" name="proj_3_dur" placeholder="Duration">
+                <input type="text" name="proj_3_link" placeholder="URL"> <br><br>
+                <textarea class="description_area" name="proj_3_des" cols="30" rows="2" placeholder="Description..."></textarea> <br><br>
+
+                <label for="project_4">4.</label>
+                <input type="text" name="proj_4_name" placeholder="Title">
+                <input type="text" name="proj_4_dur" placeholder="Duration">
+                <input type="text" name="proj_4_link" placeholder="URL"> <br><br>
+                <textarea class="description_area" name="proj_4_des" cols="30" rows="2" placeholder="Description..."></textarea> <br><br>
+
+                <h2>Training & Certification</h2>
+
+                <label for="Training_1">1.</label>
+                <input type="text" name="training_1_name" placeholder="Title">
+                <input type="text" name="training_1_dur" placeholder="Duration">
+                <input type="text" name="training_1_link" placeholder="URL"> <br><br>
+
+                <label for="Training_2">2.</label>
+                <input type="text" name="training_2_name" placeholder="Title">
+                <input type="text" name="training_2_dur" placeholder="Duration">
+                <input type="text" name="training_2_link" placeholder="URL"> <br><br>
+
+                <label for="Training_3">3.</label>
+                <input type="text" name="training_3_name" placeholder="Title">
+                <input type="text" name="training_3_dur" placeholder="Duration">
+                <input type="text" name="training_3_link" placeholder="URL"> <br><br>
+
+                <label for="Training_4">4.</label>
+                <input type="text" name="training_4_name" placeholder="Title">
+                <input type="text" name="training_4_dur" placeholder="Duration">
+                <input type="text" name="training_4_link" placeholder="URL"> <br><br>
+
+                <h2>Volunteering Experience/Position of Responsibility</h2>
+                <h4>Enter details of two recent experiences</h4>
+
+                <label for="POR_1">1.</label>
+                <input type="text" name="por_1_role" placeholder="Role">
+                <input type="text" name="por_1_dur" placeholder="Duration"> <br><br>
+                <textarea class="description_area" name="por_1_des" cols="30" rows="2" placeholder="Description..."></textarea> <br><br>
+                
+                <label for="POR_2">2.</label>
+                <input type="text" name="por_2_role" placeholder="Role">
+                <input type="text" name="por_2_dur" placeholder="Duration"> <br><br>
+                <textarea class="description_area" name="por_2_des" cols="30" rows="2" placeholder="Description..."></textarea> <br><br>
+
+                <h2>Academic Acheivements</h2>
+
+                <input type="text" name="acad_1">
+                <input type="text" name="acad_2">
+                <input type="text" name="acad_3"> <br><br>
+                <input type="text" name="acad_4">
+                <input type="text" name="acad_5">
+                
+                <br><br>
+                <h2>Hobbies & Interests</h2>
+
+                <input type="text" name="hobby_1">
+                <input type="text" name="hobby_2">
+                <input type="text" name="hobby_3"> <br><br>
+                <input type="text" name="hobby_4">
+                <input type="text" name="hobby_5">
+
+                <br><br>
+
+                <input type="submit" value="Generate Resume" 
+                style="border: 2px solid green;
+                border-radius: 10px;
+                width: 20%;
+                height: 30px;"
+                >
+
+            </form>
+        </div>
+    </body>
+</html>
