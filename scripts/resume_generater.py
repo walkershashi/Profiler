@@ -86,7 +86,7 @@ def list_table(list_):
     return skill_table
 
 def generate_resume(details):
-    report = SimpleDocTemplate('scripts/Resume.pdf')
+    report = SimpleDocTemplate('static/pdf/Resume.pdf')
     
     name, dob, email = details['Personal Details'].values()
     
@@ -122,9 +122,3 @@ def generate_resume(details):
     hobi_table = list_table(details['Hobbies & Interests'])
 
     report.build([detail_title, detail_table, edu_title, edu_table, work_title, work_table, skills_title, skills_table, project_title, project_table, training_title, training_table, volunteer_title, volunteer_table, acad_title, acad_table, hobi_title, hobi_table])
-
-
-with open('scripts/candidate_details.json', 'r') as json_file:
-    json_data = json.load(json_file)
-
-generate_resume(json_data)
