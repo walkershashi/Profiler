@@ -143,9 +143,22 @@ def user_info():
             'Hobbies & Interests' : [request.form['hobby_{}'.format(i)] for i in range(1, 6)]
         }
 
+        # Remove any previous resumes
+        try:
+            subprocess.run("rm static/pdf/Resume.pdf")
+            print("deleted Resume")
+        except:
+            print("del resume")
+
         # Generate the Resume
         r_gen.generate_resume(candidate_json)
         
+        try:
+            subprocess.run("rm templates/generated.html")
+            print("deleted generated")
+        except:
+            print('del generated')
+
         with open('templates/generated.html', 'w') as html_file:
             html_file.write('''
             <!DOCTYPE html>
@@ -160,10 +173,10 @@ def user_info():
         return render_template('generated.html')
 
 if __name__ == '__main__':
-    if platform.system() == 'Linux' or platform.system() == 'Darwin':
+    '''if platform.system() == 'Linux' or platform.system() == 'Darwin':
         subprocess.run('pip3 install -r requirements.txt')
     
     elif platform.system() == 'Windows':
-        subprocess.run('pip install -r requirements.txt')
+        subprocess.run('pip install -r requirements.txt')'''
 
     app.run(debug = True)
